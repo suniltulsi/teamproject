@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from django.core import serializers
@@ -36,3 +37,11 @@ def signup(request):
 		
 	
     
+=======
+from django.shortcuts import render, HttpResponse
+from django.http import HttpResponse
+
+# Create your views here.
+def login(request):
+	return HttpResponse("hi")
+>>>>>>> babar
