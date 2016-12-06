@@ -6,13 +6,12 @@ import json
 
 # Create your views here.
 def signup(request):
+	"""View of Signup page we are geting the data from user"""
+	""" and post thata data to database"""
 	if request.method == "POST":
 
 		if form.is_valid():
-			first_Name = form.POST.get("firstName")
-			last_Name = form.POST.get("lastName")
-			dateOfBirth = form.POST.get("dateOfBirth")
-			gender = form.POST.get("gender")
+			
 			email = form.POST.get("email")
 			userName = form.POST.get("userName")
 			password = form.POST.get("password")
@@ -25,14 +24,15 @@ def signup(request):
 			else:
 				messages.error(request, "invaild password")
 				return HttpResponseRedirect ("/sulekha/signup/")
-	# else:
+
+		return render(request, "signup.html")
+		
+	"""guidance for writing your data in JSON file""" 
 	# 	diaplayData =  (serializers.serialize('json',Signup.objects.all()))
 	# 	return JsonResponse({'diaplayData':diaplayData})
 	# 	with  open("home.json",'a') as test_file:
 	# 		 json.dump(displayData, home)
 
-
-		return render(request, "signup.html",{'diaplayData':diaplayData})
 		
 	
     
