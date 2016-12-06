@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
 
@@ -13,6 +14,15 @@ from .models import Signup
 import json
 
 # Create your views here.
+=======
+from django.shortcuts import render
+from django.http import HttpResponse,JsonResponse
+from django.core import serializers
+from .models import Signup
+import json
+
+# Create your views here.
+>>>>>>> master
 def signup(request):
 	"""View of Signup page we are geting the data from user"""
 	""" and post thata data to database"""
@@ -43,5 +53,9 @@ def signup(request):
 
 		
 	
+<<<<<<< HEAD
+    
+>>>>>>> master
+=======
     
 >>>>>>> master
