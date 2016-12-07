@@ -11,9 +11,7 @@ def signup(request):
 	if request.method == "POST":
 
 		if form.is_valid():
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 			
 			email = form.POST.get("email")
 			userName = form.POST.get("userName")
@@ -21,19 +19,7 @@ def signup(request):
 			if 8<= len(password) <=16 and re.search(r'[a-z]',password) and re.search(r'[A-Z]',password) and re.search(r'[0-9]',password) :
 				
 				uploadData = Signup(first_Name = first_Name, last_Name= last_Name, dateOfBirth = DateOfBirth, gender = gender, email = email, userName = userName, password = password)
-=======
->>>>>>> rushika
-			first_name = form.POST.get("first_name")
-			last_name = form.POST.get("last_name")
-			email = form.POST.get("email")
-			password = form.POST.get("password")
-			if 8<= len(password) <=16 and re.search(r'[a-z]',password) and re.search(r'[A-Z]',password) and re.search(r'[0-9]',password) :
-				
-				uploadData = Signup(first_name = first_name, last_name= last_name, email = email, password = password)
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> rushika
+
 				uploadData = uploadData.save()
 				return render(request, "success.html")
 
