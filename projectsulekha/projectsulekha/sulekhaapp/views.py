@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from django.core import serializers
@@ -12,13 +11,13 @@ def signup(request):
 	if request.method == "POST":
 
 		if form.is_valid():
-			
+			first_name = form.POST.get("first_name")
+			last_name = form.POST.get("last_name")
 			email = form.POST.get("email")
-			userName = form.POST.get("userName")
 			password = form.POST.get("password")
 			if 8<= len(password) <=16 and re.search(r'[a-z]',password) and re.search(r'[A-Z]',password) and re.search(r'[0-9]',password) :
 				
-				uploadData = Signup(first_Name = first_Name, last_Name= last_Name, dateOfBirth = DateOfBirth, gender = gender, email = email, userName = userName, password = password)
+				uploadData = Signup(first_name = first_name, last_name= last_name, email = email, password = password)
 				uploadData = uploadData.save()
 				return render(request, "success.html")
 
@@ -37,11 +36,4 @@ def signup(request):
 		
 	
     
-=======
-from django.shortcuts import render, HttpResponse
-from django.http import HttpResponse
 
-# Create your views here.
-def login(request):
-	return HttpResponse("hi")
->>>>>>> babar
